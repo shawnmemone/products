@@ -1,0 +1,14 @@
+<style>
+ .productimage{
+display:inline;
+width: 33%;
+float: left;
+ }
+
+ .heading{
+ text-align:center;
+ font-size: 30px;
+ font-family: times new roman;
+ font-weight: 500;
+ }
+</style>
