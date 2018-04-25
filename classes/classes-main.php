@@ -18,7 +18,6 @@ if(!class_exists('Product_class'))
         } // END public function __construct
     
     public function product_new() {
-
          $labels = array(
             'name' => __( 'Products'),
             'singular_name' => __( 'Products'),
@@ -28,7 +27,7 @@ if(!class_exists('Product_class'))
             'not_found' => __( 'No Products found' ),
             'all_items' => __( 'All Products'),
         );
-        $args = array(
+         $args = array(
             'labels' => $labels,
             'public' => true,
             'show_ui' => true,
@@ -43,7 +42,6 @@ if(!class_exists('Product_class'))
     }
 
     //Register Texonomies
-
    public function product_taxonomies(){
         $labels = array(
             'name' => __( 'Product type'),
@@ -60,7 +58,7 @@ if(!class_exists('Product_class'))
     }
 
 
-    public  function add_products_meta() {
+    public  function add_products_meta(){
         add_meta_box(
             'my-meta-box',
             __( 'My Meta Box', 'textdomain' ),
@@ -90,15 +88,12 @@ if(!class_exists('Product_class'))
         if( !current_user_can( 'edit_post' ) ) return;
         // Make sure your data is set before trying to save it
         if( isset( $_POST['my_meta_box_text'] ) )
-            update_post_meta( $post_id, 'my_meta_box_text', $_POST['my_meta_box_text'] );
-              
+            update_post_meta( $post_id, 'my_meta_box_text', $_POST['my_meta_box_text'] );        
     }
-
     public function baztag_func(){
         ?>
         <div class="heading"><h1>Get started with similar Web Products</h1>
         <?php
-
         $args = array( 'post_type' => 'Products', 'posts_per_page' => 6 );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();?>
@@ -118,7 +113,6 @@ if(!class_exists('Product_class'))
          }
         </style>
         <?php
-
         endwhile;
         do_action('show_beautiful_filters');
     }
