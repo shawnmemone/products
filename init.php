@@ -18,4 +18,3 @@ require_once( PRODUCTS_PATH . 'classes/classes-main.php' );
 $wp_plugin_template = new Product_class();
 register_activation_hook( __FILE__, array('Product_Class', 'activate'));
 ?>
-where is it ?
